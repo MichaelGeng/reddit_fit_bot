@@ -2,6 +2,7 @@ import praw
 import config
 import time
 import os
+import requests
 
 def bot_login():
 	r = praw.Reddit(username = config.username,
@@ -32,7 +33,6 @@ def run_bot(r, comments_replied):
 
 def get_cur_comments():
 	if not os.path.isfile("cur_comments.txt"):
-		print("doesn't exist yet, lets make the txt file")
 		comments_replied = []
 
 	else:
